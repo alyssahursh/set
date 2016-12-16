@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+
+body {
+  margin: 0;
+  background: linear-gradient(225deg, #9ef3dd, #9333bf, #541a6e);
+  background-size: 600% 1000%;
+
+  -webkit-animation: AnimationName 45s ease infinite;
+  -moz-animation: AnimationName 45s ease infinite;
+  animation: AnimationName 45s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
+nav {
+  color: #FFF;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  padding: 4vh;
+  font: normal normal 5rem 'VT323', sans-serif;
+}
+
+#gameboard {
+  width: 36vw;
+  height: 36vw;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0;
+  display: inline-block;
+}
+
+.score-area {
+  color: #FFF;
+  display: inline-block;
+  font: normal normal 2rem 'VT323', sans-serif;
+  text-align: center;
+  width: calc((100vw - 38vw)/2);
+  margin: 0;
+  padding: 0;
+}
+
+.score-area h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.score-area p {
+  font-size: 20rem;
+  margin: 0;
+}
+
+ul{
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  display: inline-block;
+}
+
+li.space {
+  display: inline-block;
+  background-color: #FFF;
+  border-radius: 7%;
+  width: 11vw;
+  height: 11vw;
+  margin: .33vw;
+  opacity: .6;
+}
+
+li.space:hover {
+  opacity: .9;
+}
