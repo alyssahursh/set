@@ -5,4 +5,4 @@ const Space_View = Backbone.View.extend({
 
 });
 
-export default Space_View;
+export default Spacep_View;
