@@ -6,55 +6,65 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
+    <div id="application">
 
-    <nav>
-      <button>NEW TOURNAMENT</button>
-      <h1>TIC TAC TOE, YO!</h1>
-      <button>RESET BOARD</button>
-    </nav>
+      <nav>
+        <button>NEW TOURNAMENT</button>
+        <h1>TIC TAC TOE, YO!</h1>
+        <button>RESET BOARD</button>
+      </nav>
 
-    <section id="player1-score" class="score-area">
-      <h3>PLAYER ONE</h3>
-      <p>0</p>
-    </section>
+      <section id="player1-score" class="score-area">
+        <h3>PLAYER ONE</h3>
+        <p>0</p>
+      </section>
 
-    <section id="gameboard">
-      <ul>
-        <div>
-          <li class="space"></li>
-        </div>
-        <div>
-          <li class="space"></li>
-        </div>
-        <div>
-          <li class="space"></li>
-        </div>
-        <div>
-          <li class="space"></li>
-        </div>
-        <div>
-          <li class="space"></li>
-        </div>
-        <div>
-          <li class="space"></li>
-        </div>
-        <div>
-          <li class="space"></li>
-        </div>
-        <div>
-          <li class="space"></li>
-        </div>
-        <div>
-          <li class="space"></li>
-        </div>
-      </ul>
-    </section>
+      <section id="gameboard">
+        <ul id="gameboard-ul">
+          <!-- <div>
+            <li class="space"></li>
+          </div>
+          <div>
+            <li class="space"></li>
+          </div>
+          <div>
+            <li class="space"></li>
+          </div>
+          <div>
+            <li class="space"></li>
+          </div>
+          <div>
+            <li class="space"></li>
+          </div>
+          <div>
+            <li class="space"></li>
+          </div>
+          <div>
+            <li class="space"></li>
+          </div>
+          <div>
+            <li class="space"></li>
+          </div>
+          <div>
+            <li class="space"></li>
+          </div> -->
+        </ul>
+      </section>
 
-    <section id="player2-score" class="score-area">
-      <h3>PLAYER TWO</h3>
-      <p>2</p>
-    </section>
+      <section id="player2-score" class="score-area">
+        <h3>PLAYER TWO</h3>
+        <p>2</p>
+      </section>
 
-    <script src="/app.bundle.js" charset="utf-8"></script>
+      <!-- UNDERSCORE TEMPLATES -->
+      <script type="text/template" id="tmpl-trip-card">
+        <div>
+          <li class="space"></li>
+        </div>
+      </script>
+
+      <script src="/app.bundle.js" charset="utf-8"></script>
+
+    </div>
   </body>
 </html>
