@@ -1,5 +1,7 @@
-import Card from 'app/models/card';
+import InPlay from 'app/collections/in_play';
 import Deck from 'app/collections/deck';
+import Card from 'app/models/card';
+import Board from 'app/models/board';
 import $ from 'jquery';
 
 // The app should start by creating all of the cards and storing them in a model
@@ -32,9 +34,16 @@ for (var c = 0; c < color.length; c++) {
 }
 
 var cardDeck = new Deck(allCards);
+var cardsInPlay = new InPlay();
+
+var board = new Board({
+  deck: cardDeck,
+  inPlay: cardsInPlay
+});
 
 
 $(document).ready(function(){
   console.log(allCards);
   console.log(cardDeck);
+  console.log(board.inPlay);
 });
