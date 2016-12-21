@@ -1,4 +1,6 @@
-import Backbone from 'backbone';
+import Card from 'app/models/card';
+import Deck from 'app/collections/deck';
+import $ from 'jquery';
 
 // The app should start by creating all of the cards and storing them in a model
 
@@ -9,4 +11,30 @@ var shape = ['rectangle', 'oval', 'diamond'];
 var fill = ['empty', 'stripe', 'solid'];
 
 // Create an empty array of cards (later we will put this into the deck?)
-var allCards = []
+var allCards = [];
+
+for (var c = 0; c < color.length; c++) {
+  for (var n = 0; n < number.length; n++) {
+    for (var s = 0; s < shape.length; s++) {
+      for (var f = 0; f < fill.length; f++) {
+        var card = new Card({
+          "color": color[c],
+          "number": number[n],
+          "shape": shape[s],
+          "fill": fill[f],
+          "played": false,
+          "clicked": false
+        });
+        allCards.push(card);
+      }
+    }
+  }
+}
+
+var cardDeck = new Deck(allCards);
+
+
+$(document).ready(function(){
+  console.log(allCards);
+  console.log(cardDeck);
+});
