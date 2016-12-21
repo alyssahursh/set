@@ -31,30 +31,6 @@ const Board = Backbone.Model.extend({
       });
     }
   },
-
-  checkColors: function() {
-
-  },
-
-  // Check if all shapes match or are different
-  checkShapes: function() {
-
-  },
-
-  // Check if all numbers match or are different
-  checkNumbers: function() {
-
-  },
-
-  // Check if all fills match or are different
-  checkFills: function() {
-
-  },
-
-  // We need a function to tell us if three clicked cards are a set
-  isSet: function() {
-    return checkColors() && checkShapes() && checkNumbers() && checkFills();
-  },
 });
 
 export default Board;
