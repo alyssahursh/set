@@ -2,6 +2,7 @@ import InPlay from 'app/collections/in_play';
 import Deck from 'app/collections/deck';
 import Card from 'app/models/card';
 import Board from 'app/models/board';
+import TableView from 'app/views/table_view';
 import $ from 'jquery';
 
 // The app should start by creating all of the cards and storing them in a model
@@ -48,3 +49,10 @@ $(document).ready(function(){
   console.log(board.inPlay);
   console.log(board.inPlay.checkAllCombinations());
 });
+
+var table = new TableView({
+  collection: cardsInPlay,
+  el: "#application"
+});
+
+table.render();

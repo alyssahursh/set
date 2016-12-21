@@ -13,6 +13,7 @@ const Card = Backbone.Model.extend({
   select: function() {
     // This should toggle the selected status of any card on a click.
     this.set("selected", !this.get("selected"));
+    console.log("You clicked a card!!");
   },
 });
 

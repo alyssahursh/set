@@ -5,6 +5,24 @@
     <meta charset="utf-8">
   </head>
   <body>
+    <div id="application">
+      <h1>THIS IS GOING TO BE SET, COME HELL OR HIGH WATER</h1>
+      <ul id="gameboard">
+          <!-- This is where the cards should go? -->
+      </ul>
+
+    </div>
+
+    <!-- UNDERSCORE TEMPLATE -->
+    <script type="text/template" id="card-template">
+      <li class="card">
+        <%- card.get("color") %>
+        <%- card.get("shape") %>
+        <%- card.get("number") %>
+        <%- card.get("fill") %>
+      </li>
+    </script>
     <script src="/app.bundle.js" charset="utf-8"></script>
+
   </body>
 </html>
