@@ -6,15 +6,53 @@ import Card from 'app/models/card';
 const InPlay = Backbone.Collection.extend({
   model: Card,
 
+  initialize: function() {
+    this.on("change", this.checkWin);
+  },
+
+  checkWin: function() {
+    console.log(this.areThreeSelected());
+    if (this.areThreeSelected()) {
+      console.log("I'm checking a win!!");
+      if (this.isSet(this.currentlySelected())) {
+        console.log("HOLY SHIT YOU FOUND A SET!!!!!");
+        this.removeWinningCards();
+        this.drawNewCards();
+      }
+      else {
+        console.log("Trying to deselect now");
+        this.deselectCards();
+      }
+    }
+  },
+
+  deselectCards: function() {
+    console.log("I'm in the deselect function");
+    this.where({"selected": true});
+
+    this.set(this.currentlySelected(), {"selected": false});
+    this.where({"selected": true});
+  },
+
+  removeWinningCards: function() {
+    this.remove(this.currentlySelected());
+  },
+
+  drawNewCards: function() {
+    if (this.length < 12) {
+      // this should be in the board model instead?
+    }
+  },
+
   // return an array of the currently selected cards
   currentlySelected: function() {
-    var selectedCards = this.where({"clicked": true});
+    var selectedCards = this.where({"selected": true});
     return selectedCards;
   },
 
   // determine if three cards are selected (returns boolean)
   areThreeSelected: function() {
-    return currentlySelected().length === 3;
+    return this.currentlySelected().length === 3;
   },
 
   // THIS ENTIRE THING COULD BE DRIED UP TO ONLY BE ONE FUNCTION, BUT I WENT THE LONG ROUTE TO START
@@ -100,7 +138,6 @@ const InPlay = Backbone.Collection.extend({
       }
     }
     console.log(sets);
-    console.log(setCount);
     return setCount;
   }
 });

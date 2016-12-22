@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Tic-Tac-Toe</title>
+    <title>SET</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
   </head>
   <body>
     <div id="application">
-      <h1>THIS IS GOING TO BE SET, COME HELL OR HIGH WATER</h1>
       <ul id="gameboard">
           <!-- This is where the cards should go? -->
       </ul>
@@ -15,11 +16,10 @@
 
     <!-- UNDERSCORE TEMPLATE -->
     <script type="text/template" id="card-template">
-      <li class="card">
-        <%- card.get("color") %>
+      <li class="card <%- card.get("color") %> <%- card.get("shape") %> <%- card.get("fill") %>
+">
         <%- card.get("shape") %>
-        <%- card.get("number") %>
-        <%- card.get("fill") %>
+        <h1><%- card.get("number") %></h1>
       </li>
     </script>
     <script src="/app.bundle.js" charset="utf-8"></script>

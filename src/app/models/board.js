@@ -7,14 +7,12 @@ function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
 const Board = Backbone.Model.extend({
   initialize: function(options) {
     this.deck = options.deck;
     this.inPlay = options.inPlay;
 
     for (var c = 0; c < 12; c++) {
-      console.log(this.deck);
       // get a random index
       var randomIndex = randomNumber(0, this.deck.length - 1);
 
@@ -27,7 +25,7 @@ const Board = Backbone.Model.extend({
         'number': selectedCard.get('number'),
         'shape': selectedCard.get('shape'),
         'fill': selectedCard.get('fill'),
-        'clicked': false
+        'selected': false
       });
     }
   },

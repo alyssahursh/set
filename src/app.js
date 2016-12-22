@@ -26,7 +26,7 @@ for (var c = 0; c < color.length; c++) {
           "shape": shape[s],
           "fill": fill[f],
           "played": false,
-          "clicked": false
+          "selected": false
         });
         allCards.push(card);
       }
