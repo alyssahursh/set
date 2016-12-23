@@ -11,8 +11,9 @@ const TableView = Backbone.View.extend({
   },
 
   render: function() {
+    console.log("I'm trying to re-render")
     this.gameBoardElement.empty();
-    
+
     for (var i = 0; i < this.collection.length; i++) {
       var card = new CardView({
         model: this.collection.at(i),

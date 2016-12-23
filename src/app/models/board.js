@@ -21,7 +21,7 @@ const Board = Backbone.Model.extend({
   checkWin: function() {
     if (this.areThreeSelected()) {
       if (this.inPlay.isSet(this.currentlySelected())) {
-        this.replaceWinningCards();
+        setTimeout(() => {this.replaceWinningCards()}, 1000);
         this.possibleWins = this.inPlay.checkAllCombinations();
         console.log("There are " + this.possibleWins + " possible wins on the table");
       }
@@ -44,6 +44,7 @@ const Board = Backbone.Model.extend({
         this.inPlay.remove(this.inPlay.at(d));
         this.drawCard(d);
       }
+      this.inPlay.trigger('change');
     }
   },
 
@@ -51,7 +52,6 @@ const Board = Backbone.Model.extend({
   // return an array of the currently selected cards
   currentlySelected: function() {
     var selectedCards = this.inPlay.where({"selected": true});
-    console.log(selectedCards);
     return selectedCards;
   },
 

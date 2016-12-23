@@ -85,12 +85,13 @@ const InPlay = Backbone.Collection.extend({
       for (var y = x + 1; y < this.length - 1; y++) {
         for (var z = y + 1; z < this.length; z++) {
           if (this.isSet([this.at(x), this.at(y), this.at(z)])) {
-            sets.push([this.at(x), this.at(y), this.at(z)]);
+            sets.push([x, y, z]);
             setCount += 1;
           }
         }
       }
     }
+    console.log(sets);
     return setCount;
   }
 });
