@@ -26,7 +26,7 @@ const Board = Backbone.Model.extend({
         console.log("There are " + this.possibleWins + " possible wins on the table");
       }
       else {
-        setTimeout(() => {this.deselectCards()}, 500);
+        setTimeout(() => {this.deselectCards()}, 1000);
         // this.deselectCards();
       }
     }
@@ -67,6 +67,7 @@ const Board = Backbone.Model.extend({
       }
     }
   },
+
 
   drawCard: function(index = this.inPlay.length) {
     if (this.deck.length !== 0) {
