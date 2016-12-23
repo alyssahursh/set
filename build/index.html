@@ -16,19 +16,52 @@
 
     <!-- UNDERSCORE TEMPLATE -->
     <script type="text/template" id="card-template">
-      <div class="card <%- card.get("color") %> <%- card.get("shape") %> <%- card.get("fill") %>">
+      <div class="card <%- card.get("color") %> <%- card.get("shape") %> <%- card.get("fill") %> <%- card.get("selected") %>">
+        <!-- If the card is a ONE -->
         <% if (card.get("number") === 1){ %>
-          <div class="one symbol <%- card.get("shape") %>"></div>
+          <div class="one symbol <%- card.get("shape") %>">
+          <% if (card.get("shape") === "diamond"){ %>
+            <div class="inside-diamond"></div>
+          <% } %>
+          </div>
         <% } %>
+
+        <!-- If the card is a TWO -->
         <% if (card.get("number") === 2){ %>
-          <div class="two-top symbol <%- card.get("shape") %>"></div>
-          <div class="two-bottom symbol <%- card.get("shape") %>"></div>
+          <div class="two-top symbol <%- card.get("shape") %>">
+          <% if (card.get("shape") === "diamond"){ %>
+            <div class="inside-diamond"></div>
+          <% } %>
+          </div>
+
+          <div class="two-bottom symbol <%- card.get("shape") %>">
+          <% if (card.get("shape") === "diamond"){ %>
+            <div class="inside-diamond"></div>
+          <% } %>
+          </div>
         <% } %>
+
+        <!-- If the card is a THREE-->
         <% if (card.get("number") === 3) { %>
-          <div class="three-top symbol <%- card.get("shape") %>"></div>
-          <div class="three-middle symbol <%- card.get("shape") %>"></div>
-          <div class="three-bottom symbol <%- card.get("shape") %>"></div>
+          <div class="three-top symbol <%- card.get("shape") %>">
+          <% if (card.get("shape") === "diamond"){ %>
+            <div class="inside-diamond"></div>
+          <% } %>
+          </div>
+
+          <div class="three-middle symbol <%- card.get("shape") %>">
+          <% if (card.get("shape") === "diamond"){ %>
+            <div class="inside-diamond"></div>
+          <% } %>
+          </div>
+
+          <div class="three-bottom symbol <%- card.get("shape") %>">
+          <% if (card.get("shape") === "diamond") { %>
+            <div class="inside-diamond"></div>
+          <% } %>
+          </div>
         <% } %>
+
       </div>
     </script>
     <script src="/app.bundle.js" charset="utf-8"></script>
