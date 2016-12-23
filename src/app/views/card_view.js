@@ -6,7 +6,6 @@ const CardView = Backbone.View.extend({
   initalize: function(options) {
     // This finds the template in the html scripts
     this.model = options.model;
-    this.on('change',)
   },
 
   events: {
@@ -24,10 +23,9 @@ const CardView = Backbone.View.extend({
 
   select: function() {
     // This should toggle the selected status of any card on a click.
-    this.model.set("selected", !this.model.get("selected"));
-    this.$el.toggleClass("selected");
     console.log("You clicked a card and the cardview caught it!!");
-    console.log(this.model.attributes);
+    this.model.set("selected", !this.model.get("selected"));
+    this.render();
   }
 
 });
