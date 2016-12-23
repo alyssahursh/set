@@ -108,7 +108,9 @@ div.diamond div.inside-diamond {
 /*             MAKE THE EMPTY SYMBOLS WHITE              */
 /*********************************************************/
 
-div.empty .symbol {
+.empty div.rectangle,
+.empty div.oval,
+.empty .inside-diamond {
   background-color: white;
 }
 
