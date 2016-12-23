@@ -7,9 +7,12 @@ const TableView = Backbone.View.extend({
   initialize: function(options) {
     this.collection = options.collection;
     this.gameBoardElement = this.$("#gameboard");
+    this.listenTo(this.collection, 'change', this.render);
   },
 
   render: function() {
+    this.gameBoardElement.empty();
+    
     for (var i = 0; i < this.collection.length; i++) {
       var card = new CardView({
         model: this.collection.at(i),
