@@ -22,8 +22,8 @@ div {
 /*                 GENERIC CARD STYLING                  */
 /*********************************************************/
 .card {
-  width: 10vw;
-  height: 15vw;
+  width: 140px;
+  height: 200px;
   border: 1px solid black;
   border-radius: .5rem;
   margin: 1vw;
@@ -42,15 +42,15 @@ div {
 /* GIVE THE CARDS BORDERS BASED ON THEIR COLOR ATTRIBUTES*/
 /*********************************************************/
 .purple {
-  border: 4px solid #400080;
+  border: 3px solid #400080;
 }
 
 .red {
-  border: 4px solid #d40000;
+  border: 3px solid #d40000;
 }
 
 .green {
-  border: 4px solid #007600;
+  border: 3px solid #007600;
 }
 
 
@@ -58,35 +58,33 @@ div {
 /*                SIZE AND PLACE THE SYMBOLS             */
 /*********************************************************/
 .symbol {
-  width: 7vw;
-  height: 3vw;
-  margin: 1vw 0 0 0;
+  width: 92px;
+  height: 40px;
+  margin: 10px 0 0 0;
   position: relative;
 }
 
 div.diamond div.inside-diamond {
-  width: calc(7vw - 7px);
-  height: calc(3vw - 1px);
-  /*padding-top: 7px;*/
-  /*padding-bottom: 7px;*/
+  width: calc(92px - 7px);
+  height: calc(40px - 1px);
 }
 
 .one {
-  margin-top: calc((12vw - 6px)/2);
+  margin-top: calc((200px - 40px - 6px)/2);
 }
 
 .two-top {
-  margin-top: 3.5vw;
+  margin-top: calc((200px - 10px)/2 - 46px);
 }
 
-.two-bottom {
-  margin-top: 1vw;
+.three-top {
+  margin-top: calc(((200px - 10px)/2 - (46px + 20px))/2);
 }
 
 .symbol div.inside-diamond {
   position: absolute;
   top: .5px;
-  left: 3.3px;
+  left: 3.5px;
 }
 
 
@@ -96,7 +94,7 @@ div.diamond div.inside-diamond {
 /*                  SHAPE THE SYMBOLS                    */
 /*********************************************************/
 .oval div {
-  border-radius: 5vw;
+  border-radius: 40px;
 }
 
 .diamond div {
@@ -200,6 +198,6 @@ div.empty .symbol {
 /*              HIGHLIGHT SELECTED CARDS                 */
 /*********************************************************/
 div.true {
-  border: 4px solid black;
+  border: 3px solid black;
   background-color: rgba(0, 0, 0, .1);
 }
