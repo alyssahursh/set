@@ -44,10 +44,6 @@ var board = new Board({
 
 
 $(document).ready(function(){
-  console.log(allCards);
-  console.log(cardDeck);
-  console.log(board.inPlay);
-  console.log(board.inPlay.checkAllCombinations());
 });
 
 var table = new TableView({
