@@ -3,6 +3,7 @@ import Deck from 'app/collections/deck';
 import Card from 'app/models/card';
 import Board from 'app/models/board';
 import TableView from 'app/views/table_view';
+import ApplicationView from 'app/views/application';
 import $ from 'jquery';
 
 // The app should start by creating all of the cards and storing them in a model
@@ -34,21 +35,26 @@ for (var c = 0; c < color.length; c++) {
   }
 }
 
+// Just in case you want to console log anything when the page loads (mostly for debugging):
+$(document).ready(function(){
+});
+
+// Create a Deck collection with each of the card models (81 cards in total)
 var cardDeck = new Deck(allCards);
+
+// Create an empty collection of "in play" cards
 var cardsInPlay = new InPlay();
 
-var board = new Board({
+// Instantiate a new board with the full deck and the empty cards in play collection
+var newBoard = new Board({
   deck: cardDeck,
   inPlay: cardsInPlay
 });
 
-
-$(document).ready(function(){
-});
-
-var table = new TableView({
-  collection: cardsInPlay,
+var game = new ApplicationView({
+  board: newBoard,
   el: "#application"
 });
 
-table.render();
+// Render the game
+game.render();

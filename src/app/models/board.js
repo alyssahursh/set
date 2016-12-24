@@ -7,6 +7,7 @@ function randomNumber(min, max) {
 
 const Board = Backbone.Model.extend({
   initialize: function(options) {
+    console.log("I'm in the Board model initalize!")
     this.deck = options.deck;
     this.inPlay = options.inPlay;
     while (this.inPlay.length < 12) {
@@ -88,6 +89,8 @@ const Board = Backbone.Model.extend({
       console.log("No more cards");
     }
   }
+
+
 
 });
 

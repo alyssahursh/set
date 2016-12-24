@@ -17,7 +17,6 @@ const CardView = Backbone.View.extend({
 
     // Create the new html using the options with key card and values of the card's attributes
     var html = this.cardTemplate({card: this.model});
-
     return this.$el.html(html);
   },
 

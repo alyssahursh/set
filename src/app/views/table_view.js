@@ -5,21 +5,21 @@ import _ from 'underscore';
 
 const TableView = Backbone.View.extend({
   initialize: function(options) {
-    this.collection = options.collection;
-    this.gameBoardElement = this.$("#gameboard");
-    this.listenTo(this.collection, 'change', this.render);
+    this.board = options.board;
+    this.gameBoardElement = this.$el;
+    this.listenTo(this.board.inPlay, 'change', this.render);
   },
 
   render: function() {
     console.log("Rendering the table");
     this.gameBoardElement.empty();
 
-    for (var i = 0; i < this.collection.length; i++) {
+    for (var i = 0; i < this.board.inPlay.length; i++) {
       var card = new CardView({
-        model: this.collection.at(i),
+        model: this.board.inPlay.at(i),
       });
 
-      // add the rendered html to the gameboardelement
+      // add the generated html to the gameboardelement
       this.gameBoardElement.append(card.render());
     }
   }

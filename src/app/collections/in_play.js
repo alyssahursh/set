@@ -50,6 +50,7 @@ const InPlay = Backbone.Collection.extend({
     console.log(sets);
     return setCount;
   }
+
 });
 
 export default InPlay;
