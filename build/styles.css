@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Pathway+Gothic+One');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+#application {
+  display: inline-block;
+}
+
+
 /*********************************************************/
 /*                 PREP THE GAMEBOARD                    */
 /*********************************************************/
@@ -7,7 +21,7 @@
   width: 800px;
   margin-top: 0;
   margin-right: 0;
-  margin-left: calc((100vw - 800px)/2);
+  /*margin-left: calc((100vw - 800px)/2);*/
   margin-right: calc((100vw - 800px)/2);
   padding: 0;
 }
@@ -208,4 +222,29 @@ div.true.empty div.rectangle,
 div.true.empty div.oval,
 div.true.empty div.inside-diamond {
   background-color: #e5e5e5;
+}
+
+/*********************************************************/
+/*                  STYLE THE BUTTONS                    */
+/*********************************************************/
+#options {
+  display: inline-block;
+  width: calc((100vw - 800px)/2);
+  height: 100vh;
+  float: left;
+}
+
+button {
+  width: 180px;
+  height: 50px;
+  background-color: #FFF;
+  border: 2px solid #000;
+  color: #000;
+  margin: 1.4vw auto 0;
+  display: block;
+  font: normal normal 1.5rem/1 'Pathway Gothic One', sans-serif;
+}
+
+button:hover {
+  background-color: #f2f2f2;
 }

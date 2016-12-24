@@ -65,7 +65,7 @@ const Board = Backbone.Model.extend({
     }
     this.inPlay.trigger('change');
     this.possibleWins = this.inPlay.checkAllCombinations();
-  },
+   },
 
   drawCard: function(index = this.inPlay.length) {
     if (this.deck.length !== 0) {
