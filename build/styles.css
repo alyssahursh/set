@@ -201,5 +201,11 @@ div.diamond div.inside-diamond {
 /*********************************************************/
 div.true {
   border: 3px solid black;
-  background-color: rgba(0, 0, 0, .1);
+  background-color: #e5e5e5;
+}
+
+div.true.empty div.rectangle,
+div.true.empty div.oval,
+div.true.empty div.inside-diamond {
+  background-color: #e5e5e5;
 }
