@@ -37,11 +37,17 @@ const Board = Backbone.Model.extend({
 
   replaceWinningCards: function() {
     for (var d = 0; d < this.inPlay.length; d++) {
-      if (this.inPlay.at(d).get("selected") === true) {
-        this.inPlay.remove(this.inPlay.at(d));
-        if (this.inPlay.length < 12) {
-          this.drawCard(d);
-        }
+      if (this.inPlay.at(d).get("selected") !== true) {
+        continue;
+      }
+
+      this.inPlay.remove(this.inPlay.at(d));
+
+      if (this.inPlay.length >= 12) {
+        d -= 1;
+      }
+      else if (this.inPlay.length < 12) {
+        this.drawCard(d);
       }
     }
     this.inPlay.trigger('change');

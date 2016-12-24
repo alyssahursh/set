@@ -4,6 +4,10 @@ import Card from 'app/models/card';
 const InPlay = Backbone.Collection.extend({
   model: Card,
 
+  initialize: function() {
+    this.hintCard = null;
+  },
+
   // Check if all colors match or are different
   checkColors: function(cards) {
     var colorSet = new Set([ cards[0].get("color"), cards[1].get("color"), cards[2].get("color") ]);
@@ -36,17 +40,49 @@ const InPlay = Backbone.Collection.extend({
   checkAllCombinations: function() {
     var setCount = 0;
     var sets = [];
+    var hints = [];
     for (var x = 0; x < this.length - 2; x++) {
       for (var y = x + 1; y < this.length - 1; y++) {
         for (var z = y + 1; z < this.length; z++) {
           if (this.isSet([this.at(x), this.at(y), this.at(z)])) {
-            sets.push([x, y, z]);
             setCount += 1;
+            sets.push([x, y, z]);
+            hints.push(x, y, z);
           }
         }
       }
     }
+    console.log(hints);
+    this.hintCard = this.at(this.mode(hints));
+    console.log(JSON.stringify(sets));
     return setCount;
+  },
+
+  mode: function(array) {
+    if (array.length === 0) {
+      return null;
+    }
+
+    var modeMap = {};
+    var maxEl = array[0];
+    var maxCount = 1;
+
+    for (var i = 0; i < array.length; i++) {
+      var el = array[i];
+      console.log(modeMap[el]);
+      if (modeMap[el] == null) {
+        modeMap[el] = 1;
+      }
+      else {
+        modeMap[el]++;
+        if (modeMap[el] > maxCount) {
+          maxEl = el;
+          maxCount = modeMap[el];
+        }
+      }
+    }
+    console.log(modeMap);
+    return maxEl;
   }
 
 });

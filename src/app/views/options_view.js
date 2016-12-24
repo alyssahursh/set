@@ -12,6 +12,7 @@ const OptionsView = Backbone.View.extend({
     'click #check-if-sets': 'checkSets',
     'click #draw-cards': 'drawCards',
     'click #reset-game': 'resetGame',
+    'click #hint': 'hintCard'
   },
 
   checkSets: function() {
@@ -35,8 +36,16 @@ const OptionsView = Backbone.View.extend({
     window.location.reload();
   },
 
+  hintCard: function() {
+    this.board.inPlay.hintCard.set({"hint": "isHint"});
+    this.board.inPlay.trigger('drawCards');
+    setTimeout(() => {
+      this.board.inPlay.hintCard.set({"hint": "notHint"});
+      this.board.inPlay.trigger('drawCards');
+    }, 1000);
+  },
+
   render: function() {
-    console.log("render function of options view");
   }
 });
 
