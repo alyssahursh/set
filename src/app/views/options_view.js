@@ -4,9 +4,8 @@ import $ from 'jquery';
 const OptionsView = Backbone.View.extend({
   initialize: function(options) {
     this.board = options.board;
-    // this.checkButton = this.$("#check-if-sets");
-    // this.drawButton = this.$("#draw-cards");
-    // this.resetButton = this.$("#reset-cards");
+    this.checkButton = this.$("#check-if-sets");
+    this.listenTo(this.board.inPlay, 'drawCards', this.resetCheckSetsButton);
   },
 
   events: {
@@ -16,7 +15,16 @@ const OptionsView = Backbone.View.extend({
   },
 
   checkSets: function() {
-    console.log(this.board.possibleWins);
+    if (this.board.possibleWins === 0) {
+      this.checkButton.html("NOPE");
+    }
+    else {
+      this.checkButton.html("YES");
+    }
+  },
+
+  resetCheckSetsButton: function() {
+    this.checkButton.html("ARE THERE SETS?");
   },
 
   drawCards: function() {

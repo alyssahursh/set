@@ -43,6 +43,7 @@ const Board = Backbone.Model.extend({
       }
     }
     this.inPlay.trigger('change');
+    this.inPlay.trigger('drawCards');
     this.possibleWins = this.inPlay.checkAllCombinations();
   },
 
@@ -64,6 +65,7 @@ const Board = Backbone.Model.extend({
       }
     }
     this.inPlay.trigger('change');
+    this.inPlay.trigger('drawCards');
     this.possibleWins = this.inPlay.checkAllCombinations();
    },
 
