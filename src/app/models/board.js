@@ -39,7 +39,9 @@ const Board = Backbone.Model.extend({
     for (var d = 0; d < this.inPlay.length; d++) {
       if (this.inPlay.at(d).get("selected") === true) {
         this.inPlay.remove(this.inPlay.at(d));
-        this.drawCard(d);
+        if (this.inPlay.length < 12) {
+          this.drawCard(d);
+        }
       }
     }
     this.inPlay.trigger('change');

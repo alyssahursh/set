@@ -18,11 +18,11 @@ body {
 #gameboard {
   list-style: none;
   display: inline-block;
-  width: 800px;
+  width: 950px;
   margin-top: 0;
   margin-right: 0;
   /*margin-left: calc((100vw - 800px)/2);*/
-  margin-right: calc((100vw - 800px)/2);
+  /*margin-right: calc((100vw - 800px)/2);*/
   padding: 0;
 }
 
