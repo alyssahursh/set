@@ -6,7 +6,6 @@ body {
   padding: 0;
 }
 
-
 #application {
   display: inline-block;
 }
@@ -19,10 +18,8 @@ body {
   list-style: none;
   display: inline-block;
   width: 950px;
-  margin-top: 0;
+  margin-top: 25px;
   margin-right: 0;
-  /*margin-left: calc((100vw - 800px)/2);*/
-  /*margin-right: calc((100vw - 800px)/2);*/
   padding: 0;
 }
 
@@ -232,6 +229,7 @@ div.true.empty div.inside-diamond {
   width: calc((100vw - 800px)/2);
   height: 100vh;
   float: left;
+  margin-top: 25px;
 }
 
 button {
