@@ -11,7 +11,7 @@ const TableView = Backbone.View.extend({
   },
 
   render: function() {
-    console.log("I'm trying to re-render")
+    console.log("Rendering the table");
     this.gameBoardElement.empty();
 
     for (var i = 0; i < this.collection.length; i++) {

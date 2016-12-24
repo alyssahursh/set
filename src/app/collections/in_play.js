@@ -86,11 +86,13 @@ const InPlay = Backbone.Collection.extend({
         for (var z = y + 1; z < this.length; z++) {
           if (this.isSet([this.at(x), this.at(y), this.at(z)])) {
             sets.push([x, y, z]);
+            console.log(this.at(x).attributes, this.at(y).attributes, this.at(z).attributes);
             setCount += 1;
           }
         }
       }
     }
+    console.log("There are " + setCount + " possible wins on the table");
     console.log(sets);
     return setCount;
   }

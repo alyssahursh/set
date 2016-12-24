@@ -23,7 +23,6 @@ const CardView = Backbone.View.extend({
 
   select: function() {
     // This should toggle the selected status of any card on a click.
-    console.log("You clicked a card and the cardview caught it!!");
     this.model.set("selected", !this.model.get("selected"));
     this.render();
   }
