@@ -46,8 +46,6 @@ const InPlay = Backbone.Collection.extend({
         }
       }
     }
-    console.log("There are " + setCount + " possible wins on the table");
-    console.log(sets);
     return setCount;
   }
 

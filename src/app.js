@@ -39,18 +39,13 @@ for (var c = 0; c < color.length; c++) {
 $(document).ready(function(){
 });
 
-// Create a Deck collection with each of the card models (81 cards in total)
-var cardDeck = new Deck(allCards);
-
-// Create an empty collection of "in play" cards
-var cardsInPlay = new InPlay();
-
-// Instantiate a new board with the full deck and the empty cards in play collection
+// Instantiate a new board with a full deck and the empty cards in play collection
 var newBoard = new Board({
-  deck: cardDeck,
-  inPlay: cardsInPlay
+  deck: new Deck(allCards),
+  inPlay: new InPlay()
 });
 
+// Instantiate a new game!
 var game = new ApplicationView({
   board: newBoard,
   el: "#application"

@@ -1,5 +1,6 @@
 import Backbone from 'backbone';
 import Card from 'app/models/card';
+import _ from 'underscore';
 
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -7,7 +8,6 @@ function randomNumber(min, max) {
 
 const Board = Backbone.Model.extend({
   initialize: function(options) {
-    console.log("I'm in the Board model initalize!")
     this.deck = options.deck;
     this.inPlay = options.inPlay;
     while (this.inPlay.length < 12) {
@@ -25,7 +25,6 @@ const Board = Backbone.Model.extend({
       }
       else {
         setTimeout(() => {this.deselectCards()}, 1000);
-        // this.deselectCards();
       }
     }
   },
@@ -44,14 +43,13 @@ const Board = Backbone.Model.extend({
       }
     }
     this.inPlay.trigger('change');
-    this.inPlay.checkAllCombinations();
+    this.possibleWins = this.inPlay.checkAllCombinations();
   },
 
 
   // return an array of the currently selected cards
   currentlySelected: function() {
-    var selectedCards = this.inPlay.where({"selected": true});
-    return selectedCards;
+    return this.inPlay.where({"selected": true});
   },
 
   // determine if three cards are selected (returns boolean)
@@ -60,13 +58,14 @@ const Board = Backbone.Model.extend({
   },
 
   dealThreeMore: function() {
-    if (this.inPlay.length < 16) {
+    if (this.inPlay.length < 15) {
       for (var d = 0; d < 3; d++ ) {
         this.drawCard();
       }
     }
+    this.inPlay.trigger('change');
+    this.possibleWins = this.inPlay.checkAllCombinations();
   },
-
 
   drawCard: function(index = this.inPlay.length) {
     if (this.deck.length !== 0) {
@@ -77,21 +76,12 @@ const Board = Backbone.Model.extend({
       var selectedCard = this.deck.remove(this.deck.at(randomIndex));
 
       // add that card to the inPlay collection
-      this.inPlay.add(new Card({
-        'color': selectedCard.get('color'),
-        'number': selectedCard.get('number'),
-        'shape': selectedCard.get('shape'),
-        'fill': selectedCard.get('fill'),
-        'selected': false
-      }), {at: index});
+      this.inPlay.add(_.assign(selectedCard, {'selected': false}), {at: index});
     }
     else {
       console.log("No more cards");
     }
   }
-
-
-
 });
 
 export default Board;
