@@ -52,7 +52,6 @@ const InPlay = Backbone.Collection.extend({
         }
       }
     }
-    console.log(hints);
     this.hintCard = this.at(this.mode(hints));
     console.log(JSON.stringify(sets));
     return setCount;
@@ -69,8 +68,7 @@ const InPlay = Backbone.Collection.extend({
 
     for (var i = 0; i < array.length; i++) {
       var el = array[i];
-      console.log(modeMap[el]);
-      if (modeMap[el] == null) {
+      if (modeMap[el] === undefined) {
         modeMap[el] = 1;
       }
       else {
@@ -81,7 +79,6 @@ const InPlay = Backbone.Collection.extend({
         }
       }
     }
-    console.log(modeMap);
     return maxEl;
   }
 

@@ -37,12 +37,19 @@ const OptionsView = Backbone.View.extend({
   },
 
   hintCard: function() {
-    this.board.inPlay.hintCard.set({"hint": "isHint"});
-    this.board.inPlay.trigger('drawCards');
-    setTimeout(() => {
-      this.board.inPlay.hintCard.set({"hint": "notHint"});
+    if (this.board.inPlay.hintCard === undefined) {
+      console.log("Trying to updated the button");
+      this.$("#draw-cards").addClass('isHint');
+      setTimeout(() => {this.$("#draw-cards").removeClass('isHint')}, 1000);
+    }
+    else {
+      this.board.inPlay.hintCard.set({"hint": "isHint"});
       this.board.inPlay.trigger('drawCards');
-    }, 1000);
+      setTimeout(() => {
+        this.board.inPlay.hintCard.set({"hint": "notHint"});
+        this.board.inPlay.trigger('drawCards');
+      }, 1000);
+    }
   },
 
   render: function() {
