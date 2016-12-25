@@ -32,5 +32,9 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.16.0"
+  },
+  "engines": {
+    "npm": "3.9.5",
+    "node": "6.2.2"
   }
 }
