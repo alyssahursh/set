@@ -53,6 +53,7 @@ const InPlay = Backbone.Collection.extend({
       }
     }
     this.hintCard = this.at(this.mode(hints));
+    // this.hintCard = this.at(undefined);
     console.log(JSON.stringify(sets));
     return setCount;
   },
