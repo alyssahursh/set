@@ -16,14 +16,7 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     contentBase: './build',
-    historyApiFallback: true,
-    hot: true,
-    inline: true,
-    port: 8081
+    port: 80
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin({
-      multiStep: true
-    })
-  ]
+
 };
