@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
   entry: ['babel-polyfill', './src/app.js'],
@@ -18,5 +19,7 @@ module.exports = {
     contentBase: './build',
     port: 80
   },
-
+  plugins: [
+    new DashboardPlugin()
+  ]
 };
