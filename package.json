@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dashboard -- webpack-dev-server",
     "test": "jasmine",
-    "repl": "babel-node"
+    "repl": "babel-node",
+    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress"
   },
   "author": "Ada Developers Academy <contact@adadevelopersacademy.org>",
   "license": "MIT",
