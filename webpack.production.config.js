@@ -24,7 +24,6 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin({
       multiStep: true
-    }),
-    new DashboardPlugin()
+    })
   ]
 };
