@@ -8,7 +8,7 @@
     "test": "jasmine",
     "repl": "babel-node",
     "build": "npm install",
-    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress"
+    "postbuild": "webpack -p --config ./webpack.config.js --progress"
   },
   "author": "Ada Developers Academy <contact@adadevelopersacademy.org>",
   "license": "MIT",
