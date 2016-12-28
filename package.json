@@ -5,7 +5,7 @@
   "main": "./bin/app.bundle.js",
   "scripts": {
     "postinstall": "webpack --config ./webpack.production.config.js --progress --colors",
-    "start": "node ./src/app.js",
+    "start": "node ./build/app.bundle.js",
     "test": "jasmine",
     "repl": "babel-node"
   },
@@ -16,7 +16,7 @@
     "url": "https://github.com/AdaGold/tic-tac-toe/issues"
   },
   "homepage": "https://github.com/AdaGold/tic-tac-toe#readme",
-  "dependencies": {
+  "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
@@ -28,7 +28,9 @@
     "jasmine-expect": "^3.0.1",
     "jquery": "^3.1.1",
     "webpack": "^1.13.3",
-    "webpack-dashboard": "^0.2.0",
+    "webpack-dashboard": "^0.2.0"
+  },
+  "dependencies": {
     "webpack-dev-server": "^1.16.2",
     "babel-polyfill": "^6.16.0"
   }

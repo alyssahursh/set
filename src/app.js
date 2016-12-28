@@ -35,10 +35,6 @@ for (var c = 0; c < color.length; c++) {
   }
 }
 
-// Just in case you want to console log anything when the page loads (mostly for debugging):
-$(document).ready(function(){
-});
-
 // Instantiate a new board with a full deck and the empty cards in play collection
 var newBoard = new Board({
   deck: new Deck(allCards),
