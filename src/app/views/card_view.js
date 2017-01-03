@@ -28,7 +28,7 @@ const CardView = Backbone.View.extend({
   },
 
   shakeHint: function() {
-    console.log("Trying to shake this card:")
+    console.log("Trying to shake this card:");
     console.log(this.model);
     setTimeout(() => {this.model.set({"hint": "notHint"})}, 1000);
     this.board.inPlay.trigger('change');
