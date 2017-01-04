@@ -9,7 +9,7 @@ const TableView = Backbone.View.extend({
     this.firstRow = this.$("#first-row");
     this.secondRow = this.$("#second-row");
     this.thirdRow = this.$("#third-row");
-    this.listenTo(this.board.inPlay, 'drawCards', this.render);
+    this.listenTo(this.board.inPlay, 'ReRender', this.render);
   },
 
   render: function() {

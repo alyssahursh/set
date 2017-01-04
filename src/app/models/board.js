@@ -24,6 +24,7 @@ const Board = Backbone.Model.extend({
         this.possibleWins = this.inPlay.checkAllCombinations();
       }
       else {
+        console.log("I'm trying to deselect");
         setTimeout(() => {this.deselectCards()}, 1000);
       }
     }
@@ -31,8 +32,10 @@ const Board = Backbone.Model.extend({
 
   deselectCards: function() {
     for (var d = 0; d < this.inPlay.length; d++) {
+      console.log(this.inPlay.at(d));
       this.inPlay.at(d).set("selected", false);
     }
+    this.inPlay.trigger('ReRender');
   },
 
   replaceWinningCards: function() {
@@ -51,7 +54,7 @@ const Board = Backbone.Model.extend({
       }
     }
     this.inPlay.trigger('change');
-    this.inPlay.trigger('drawCards');
+    this.inPlay.trigger('ReRender');
     this.possibleWins = this.inPlay.checkAllCombinations();
   },
 
@@ -73,7 +76,7 @@ const Board = Backbone.Model.extend({
       }
     }
     this.inPlay.trigger('change');
-    this.inPlay.trigger('drawCards');
+    this.inPlay.trigger('ReRender');
     this.possibleWins = this.inPlay.checkAllCombinations();
    },
 
