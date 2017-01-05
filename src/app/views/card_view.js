@@ -32,7 +32,6 @@ const CardView = Backbone.View.extend({
     console.log(this.model);
     setTimeout(() => {this.model.set({"hint": "notHint"})}, 1000);
     this.board.inPlay.trigger('change');
-    this.board.inPlay.trigger('drawCards');
   }
 
 });
