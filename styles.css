@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css?family=Pathway+Gothic+One');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#application {
+  display: inline-block;
+}
+
+
+/*********************************************************/
+/*                 PREP THE GAMEBOARD                    */
+/*********************************************************/
+#gameboard {
+  list-style: none;
+  display: inline-block;
+  width: 950px;
+  margin-top: 25px;
+  margin-right: 0;
+  padding: 0;
+}
+
+div {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+/*********************************************************/
+/*                 GENERIC CARD STYLING                  */
+/*********************************************************/
+.card {
+  width: 140px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: .5rem;
+  margin: 1vw;
+  text-align: center;
+  display: inline-block;
+  color: #000;
+  overflow: auto;
+  position: relative;
+}
+
+.card:hover {
+  opacity: .7;
+}
+
+/*********************************************************/
+/* GIVE THE CARDS BORDERS BASED ON THEIR COLOR ATTRIBUTES*/
+/*********************************************************/
+.purple {
+  border: 3px solid #400080;
+}
+
+.red {
+  border: 3px solid #d40000;
+}
+
+.green {
+  border: 3px solid #007600;
+}
+
+
+/*********************************************************/
+/*                SIZE AND PLACE THE SYMBOLS             */
+/*********************************************************/
+.symbol {
+  width: 92px;
+  height: 40px;
+  margin: 10px 0 0 0;
+  position: relative;
+}
+
+div.diamond div.inside-diamond {
+  width: calc(92px - 7px);
+  height: calc(40px - 1px);
+}
+
+.one {
+  margin-top: calc((200px - 40px - 6px)/2);
+}
+
+.two-top {
+  margin-top: calc((200px - 10px)/2 - 46px);
+}
+
+.three-top {
+  margin-top: calc(((200px - 10px)/2 - (46px + 20px))/2);
+}
+
+.symbol div.inside-diamond {
+  position: absolute;
+  top: .5px;
+  left: 3.5px;
+}
+
+
+
+
+/*********************************************************/
+/*                  SHAPE THE SYMBOLS                    */
+/*********************************************************/
+.oval div {
+  border-radius: 40px;
+}
+
+.diamond div {
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+
+
+/*********************************************************/
+/*             MAKE THE EMPTY SYMBOLS WHITE              */
+/*********************************************************/
+
+.empty div.rectangle,
+.empty div.oval,
+.empty .inside-diamond {
+  background-color: white;
+}
+
+/*********************************************************/
+/*                 COLOR IN THE GREENS                   */
+/*********************************************************/
+.green div.rectangle,
+.green div.oval,
+.green div.diamond {
+  border: #007600 3px solid;
+}
+
+.solid.green div.symbol,
+.green div.diamond {
+  background-color: #007600
+}
+
+.stripe.green div.rectangle,
+.stripe.green div.oval,
+.stripe.green div.inside-diamond {
+  border-color: #007600 3px solid;
+  background: repeating-linear-gradient(
+   90deg,
+   white,
+   white 2px,
+   #007600 2px,
+   #007600 5px
+  )
+}
+
+/*********************************************************/
+/*                  COLOR IN THE REDS                    */
+/*********************************************************/
+.red div.rectangle,
+.red div.oval,
+.red div.diamond {
+  border: #d40000 3px solid;
+}
+
+.solid.red div.symbol,
+.red div.diamond {
+  background-color: #d40000;
+}
+
+.stripe.red div.rectangle,
+.stripe.red div.oval,
+.stripe.red div.inside-diamond {
+  border-color: #d40000 3px solid;
+  background: repeating-linear-gradient(
+   90deg,
+   white,
+   white 2px,
+   #d40000 2px,
+   #d40000 5px
+  )
+}
+
+
+/*********************************************************/
+/*                COLOR IN THE PURPLES                   */
+/*********************************************************/
+.purple div.rectangle,
+.purple div.oval,
+.purple div.diamond {
+  border: #400080 3px solid;
+}
+
+.solid.purple div.symbol,
+.purple div.diamond {
+  background-color: #400080;
+}
+
+.stripe.purple div.rectangle,
+.stripe.purple div.oval,
+.stripe.purple div.inside-diamond {
+  border-color: #400080 3px solid;
+  background: repeating-linear-gradient(
+   90deg,
+   white,
+   white 2px,
+   #400080 2px,
+   #400080 5px
+  )
+}
+
+/*********************************************************/
+/*              HIGHLIGHT SELECTED CARDS                 */
+/*********************************************************/
+div.true {
+  border: 3px solid black;
+  background-color: #e5e5e5;
+}
+
+div.true.empty div.rectangle,
+div.true.empty div.oval,
+div.true.empty div.inside-diamond {
+  background-color: #e5e5e5;
+}
+
+/*********************************************************/
+/*                  STYLE THE BUTTONS                    */
+/*********************************************************/
+#options {
+  display: inline-block;
+  width: calc((100vw - 800px)/2);
+  height: 100vh;
+  float: left;
+  margin-top: 25px;
+}
+
+button {
+  width: 180px;
+  height: 50px;
+  background-color: #FFF;
+  border: 2px solid #000;
+  color: #000;
+  margin: 1.4vw auto 0;
+  display: block;
+  font: normal normal 1.5rem/1 'Pathway Gothic One', sans-serif;
+}
+
+button:hover {
+  background-color: #f2f2f2;
+}
+
+button:focus {
+  outline: none;
+}
+
+/*********************************************************/
+/*                SHAKE THE HINT CARD                    */
+/*********************************************************/
+.isHint {
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: rotateZ(1deg);
+  }
+
+  20%, 80% {
+    transform: rotateZ(-1deg);
+  }
+
+  30%, 50%, 70% {
+    transform: rotateZ(1deg);
+  }
+
+  40%, 60% {
+    transform: rotateZ(-1deg);
+  }
+}
