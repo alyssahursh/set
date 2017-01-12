@@ -19,7 +19,7 @@ var common = {
 
 var production = {
   output: {
-     publicPath: '/tic-tac-toe/'
+     publicPath: '/set/'
   }
 };
 
