@@ -7,7 +7,8 @@
     "start": "webpack-dashboard -- webpack-dev-server",
     "test": "jasmine",
     "repl": "babel-node",
-    "build": "npm install",
+    "build": "webpack",
+    "deploy": "gh-pages -d build",
     "postinstall": "webpack -p --config ./webpack.config.js --progress"
   },
   "author": "Ada Developers Academy <contact@adadevelopersacademy.org>",
@@ -33,7 +34,8 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
-    "babel-polyfill": "^6.16.0"
+    "babel-polyfill": "^6.16.0",
+    "webpack-merge": "^2.4.0"
   },
   "engines": {
     "npm": "3.9.5",
