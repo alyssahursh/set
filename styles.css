@@ -46,6 +46,7 @@ div {
 }
 
 .card:hover {
+  cursor: pointer;
   opacity: .7;
 }
 
@@ -244,6 +245,7 @@ button {
 }
 
 button:hover {
+  cursor: pointer;
   background-color: #f2f2f2;
 }
 
