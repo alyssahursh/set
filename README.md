@@ -2,7 +2,7 @@
 Single-page application. [Set](https://en.wikipedia.org/wiki/Set_(game)) card game using the JavaScript framework Backbone. Play it [here](https://alyssahursh.github.io/set).
 
 ## 
-![Set card game](/set.png?raw=true "Set card game")
+<kbd>![Set card game](/set.png?raw=true "Set card game")</kbd>
 
 ## Why did you build this?
 * Our assignment was to build tic-tac-toe as a single-page application, but I couldn't make sense of the instruction
