@@ -25,9 +25,10 @@ If there are only 12 cards on the table, you can click "Draw Cards" to add three
 Need help finding a set? Click the Hint button, which will shake the card that belongs to the most sets currently on the board. If there are no sets on the board, getting a hint will shake the "Are There Sets" button instead. 
 
 ## Why did you build this?
-* Our assignment was to build tic-tac-toe as a single-page application, but I couldn't make sense of the instruction or the assignment
+* Our assignment was to build tic-tac-toe as a single-page application using Backbone, but I couldn't make sense of the instruction or the assignment.
+* Frustrated, I read the entirety of the Backbone docs (it's pretty short and very human-readable), then I built something that made sense to me but was still in keeping with the original assignment.
 
 ## If I had more time
-* I'd fix the responsiveness of the site, so that you can resize the screen without unexpected behavior.
+* I'd fix the screen-size responsiveness of the site, so that you can resize the screen without unexpected behavior.
 * I'd add the ability to score points and game wins by player.
 * I'd add a deck counter to tell you how many more cards are left in the deck.
