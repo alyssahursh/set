@@ -1,5 +1,5 @@
 # Set
-Single-page application. [Set](https://en.wikipedia.org/wiki/Set_(game)) card game using the JavaScript framework Backbone. Play it [here](https://alyssahursh.github.io/set).
+[Set](https://en.wikipedia.org/wiki/Set_(game)) card game. A single-page application using the JavaScript framework Backbone. Play it [here](https://alyssahursh.github.io/set).
 
 <kbd>![Set card game](/set.png?raw=true "Set card game")</kbd>
 
@@ -9,7 +9,8 @@ Single-page application. [Set](https://en.wikipedia.org/wiki/Set_(game)) card ga
 * Deployed with Github pages
 
 ## How do I play?
-[Head on over to the app](https://alyssahursh.github.io/set)
+[Head on over to the app](https://alyssahursh.github.io/set).
+
 Select three cards that are part of a set. You can tell you've selected a card when the card turns gray.
 
 A set is comprised of three cards where:
