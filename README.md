@@ -1,4 +1,4 @@
-# Set
+# Set 
 [Set](https://en.wikipedia.org/wiki/Set_(game)) card game. A single-page application using the JavaScript framework Backbone. Play it [here](https://alyssahursh.github.io/set).
 
 <kbd>![Set card game](/set.png?raw=true "Set card game")</kbd>
